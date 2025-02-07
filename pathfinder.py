@@ -23,7 +23,7 @@ def find_path(start_url, end_url):
     
 if __name__ == "__main__":
     start_url = "https://en.wikipedia.org/wiki/Web_scraping"
-    end_url = "https://en.wikipedia.org/wiki/Data_mining"
+    end_url = "https://en.wikipedia.org/wiki/Blacksburg,_Virginia"
     path = find_path(start_url, end_url)
     if path:
         print("Path found:")
