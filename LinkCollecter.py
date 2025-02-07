@@ -14,18 +14,29 @@ def get_internal_links(url):
     internal_links = content.find_all('a', href=re.compile('^/wiki/'))
 
     # Extract and return the URLs
-    urls = ['https://en.wikipedia.org' + link['href'] for link in internal_links]
+    urls = [link['href'] for link in internal_links]
     useful_links = []
 
     for num, link in enumerate(urls):
-        if "https://en.wikipedia.org/wiki/File:" in link:
+        if "/wiki/File:" in link:
             ...
-        elif "https://en.wikipedia.org/wiki/Category:" in link:
+        elif "/wiki/Category:" in link:
+            ...
+        elif "/wiki/Special:" in link:
+            ...
+        elif "/wiki/Template:" in link:
+            ...
+        elif "/wiki/Wikipedia:" in link:
+            ...
+        elif "/wiki/Help:" in link:
+            ...
+        elif "/wiki/Template_talk:" in link:
             ...
         else:
             useful_links.append(link)
 
-    return useful_links
+
+    return ['https://en.wikipedia.org' + link for link in useful_links]
 
 # Example usage
 wikipedia_url = "https://en.wikipedia.org/wiki/Congress_of_Jalisco"
