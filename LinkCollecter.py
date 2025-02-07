@@ -38,9 +38,4 @@ def get_internal_links(url):
 
     return ['https://en.wikipedia.org' + link for link in useful_links]
 
-# Example usage
-wikipedia_url = "https://en.wikipedia.org/wiki/Congress_of_Jalisco"
-internal_urls = get_internal_links(wikipedia_url)
 
-for url in internal_urls:
-    print(url)
