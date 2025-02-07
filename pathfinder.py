@@ -6,6 +6,7 @@
 #import the Linkcollector function from LinlCollector.py
 from LinkCollecter import get_internal_links
 
+
 def find_path(start_url, end_url):
     visited = set()
     queue = [(start_url, [start_url])]
@@ -19,8 +20,15 @@ def find_path(start_url, end_url):
             for link in get_internal_links(current_url):
                 if link not in visited:
                     queue.append((link, path + [link]))
-    return None
-
-
-
+    
+if __name__ == "__main__":
+    start_url = "https://en.wikipedia.org/wiki/Web_scraping"
+    end_url = "https://en.wikipedia.org/wiki/Data_mining"
+    path = find_path(start_url, end_url)
+    if path:
+        print("Path found:")
+        for url in path:
+            print(url)
+    else:
+        print("No path found.")
 
